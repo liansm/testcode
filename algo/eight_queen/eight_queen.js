@@ -13,7 +13,7 @@ function is_conflict(r, r_val, j, j_val)
 function can_put(row, value, cur_queens)
 {
     var queen_size = cur_queens.lenght;
-    for(var i = 0; i < queenSize; ++i){
+    for(var i = 0; i < queen_size; ++i){
         if(is_conflict(row, value, i+1, cur_queens[i])){
             return false;
         }
