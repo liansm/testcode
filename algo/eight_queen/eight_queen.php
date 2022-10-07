@@ -1,5 +1,13 @@
 <?php
 
+$max_queen_size = 8;
+$total_solution = 0;
+$cur_queens = [];
+
+backtrace($cur_queens, $max_queen_size);
+
+echo "total solutions: $total_solution \n";
+
 function is_conflict($r, $r_val, $j, $j_val)
 {
     if($r_val == $j_val){
@@ -26,28 +34,30 @@ function can_put($row, $value, $cur_queens)
 
 function print_queens($cur_queens)
 {
+    global $total_solution;
     $queen_size = count($cur_queens);
     echo "[" . $total_solution . "]";
 
     for($i = 0; $i < $queen_size; ++$i){
-        echo $cur_queens[i] . "\t";
+        echo $cur_queens[$i] . "\t";
     }
     echo "\n";
 }
 
-function backtrace($cur_queens, $max_queen_size)
+function backtrace(&$cur_queens, $max_queen_size)
 {
+    global $total_solution;
     $queen_size = count($cur_queens);
     for($i = 1; $i <= $max_queen_size; ++$i){
         if(can_put($queen_size +1, $i, $cur_queens)){
             array_push($cur_queens, $i);
+            if(count($cur_queens) == $max_queen_size) {
+                ++$total_solution;
+                print_queens($cur_queens);        
+            }
+            backtrace($cur_queens, $max_queen_size);
         }
 
-        if(count($cur_queens) == $max_queen_size) {
-            ++$total_solution;
-            print_queens($cur_queens);        
-        }
-        backtrace($cur_queens, $max_queen_size);
     }
 
     if(count($cur_queens) != 0){
@@ -55,14 +65,6 @@ function backtrace($cur_queens, $max_queen_size)
     }
 }
 
-
-$max_queen_size = 8;
-$total_solution = 0;
-$cur_queens = [];
-
-backtrace($cur_queens, $max_queen_size);
-
-echo "total solutions: $total_solution \n";
 
 
 ?>

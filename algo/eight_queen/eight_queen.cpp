@@ -43,7 +43,7 @@ void Backtrace(std::vector<int>& curQueens, int maxQueenSize, int& totalSolution
 			curQueens.push_back(i);
 			if (curQueens.size() == maxQueenSize) {
 				++totalSolution;
-				//PrintQueens(curQueens, totalSolution);
+				PrintQueens(curQueens, totalSolution);
 			}
 			Backtrace(curQueens, maxQueenSize, totalSolution);
 		}
@@ -55,7 +55,7 @@ void Backtrace(std::vector<int>& curQueens, int maxQueenSize, int& totalSolution
 
 int main()
 {
-	int maxQueenSize = 14;
+	int maxQueenSize = 8;
 	int totalSolution = 0;
 	std::vector<int> curQueens;
 
