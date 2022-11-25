@@ -36,7 +36,7 @@ function backtrace(cur_queens, max_queen_size) {
             cur_queens.push(i)
             if (cur_queens.length == max_queen_size) {
                 ++total_solution;
-//                print_queens(cur_queens);
+                print_queens(cur_queens);
             }
             backtrace(cur_queens, max_queen_size);
         }
@@ -48,7 +48,7 @@ function backtrace(cur_queens, max_queen_size) {
 }
 
 
-var max_queen_size = 14;
+var max_queen_size = 8;
 var total_solution = 0;
 var cur_queens = [];
 
