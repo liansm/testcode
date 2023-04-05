@@ -3,6 +3,7 @@ def solve():
     s = []
     while stack != []:
         a = stack.pop()
+        print(a)
         if len(a) == 8:
             s.append(a)
         else:
@@ -18,4 +19,4 @@ def valid(x, a):
          return False
     return True
 
-print(solve())
+solve()
