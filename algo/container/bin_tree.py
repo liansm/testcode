@@ -65,6 +65,28 @@ class BinTree:
         if cur_node.left_child != None:
             self.traverse(cur_node.left_child)     
 
+
+    def preorder(self, node):
+        print(node.data)
+        if node.left_child != None:
+            self.preorder(node.left_child)
+        if node.right_child != None:
+            self.preorder(node.right_child)
+
+    def inorder(self, node):
+        if node.left_child != None:
+           self.inorder(node.left_child)
+        print(node.data)
+        if node.right_child != None:
+           self.inorder(node.right_child)
+
+    def postorder(self, node):
+       if node.left_child != None:
+           self.postorder(node.left_child)
+       if node.right_child != None:
+           self.postorder(node.right_child)           
+       print(node.data)        
+
     def find_rightest_node(self, cur_node):
         rightest_node_parent = None
         while cur_node.right_child != None:
