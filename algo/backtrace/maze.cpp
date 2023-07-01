@@ -3,7 +3,7 @@
 #include <string.h>
 using namespace std;
 
-/*
+
 int n, m;
 bool maze[100][100];
 bool maze_mask[100][100];
@@ -72,4 +72,4 @@ int main()
     cout << "NO" << endl;
     return 0;
 }
-*/
+

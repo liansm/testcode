@@ -5,7 +5,7 @@
 //  Created by liansm on 2023/6/27.
 //
 
-/*
+
 #include <stdio.h>
 #include <iostream>
 #include <vector>
@@ -65,4 +65,4 @@ int main()
     print_sub_list();
     return 0;
 }
-*/
+
